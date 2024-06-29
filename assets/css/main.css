@@ -1,0 +1,358 @@
+.main {
+  width: 95%;
+  height: 100%;
+  margin-bottom: 50px;
+  position: absolute;
+  display: grid;
+  justify-self: center;
+}
+.main .gallow {
+  position: absolute;
+}
+.main .gallow .img-1 {
+  position: relative;
+  left: 50px;
+  z-index: 3;
+}
+.main .gallow .img-2 {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  z-index: 2;
+}
+.main .gallow .img-3 {
+  position: absolute;
+  top: 45px;
+  left: 50px;
+  z-index: 1;
+}
+.main .gallow .img-4 {
+  position: absolute;
+  top: 75px;
+  left: 310px;
+}
+.main .gallow .man {
+  position: absolute;
+  display: grid;
+  flex-direction: column;
+  width: auto;
+  top: 155px;
+  left: 265px;
+}
+.main .gallow .man .img-body {
+  position: absolute;
+  top: 100px;
+  width: 5px;
+  height: 130px;
+  justify-self: center;
+}
+.main .gallow .man .img-hand-one {
+  position: relative;
+  top: 20px;
+  left: -15px;
+}
+.main .gallow .man .img-hand-two {
+  position: relative;
+  top: -60px;
+  left: 50px;
+}
+.main .gallow .man .img-leg-one {
+  position: relative;
+  top: -35px;
+  left: -15px;
+}
+.main .gallow .man .img-leg-two {
+  position: relative;
+  top: -115px;
+  left: 50px;
+}
+.main .gallow .man .img-head,
+.main .gallow .man .img-body,
+.main .gallow .man .img-hand-one,
+.main .gallow .man .img-hand-two,
+.main .gallow .man .img-leg-one,
+.main .gallow .man .img-leg-two {
+  display: none;
+}
+.main .gallow .man .img-head.wrong,
+.main .gallow .man .img-body.wrong,
+.main .gallow .man .img-hand-one.wrong,
+.main .gallow .man .img-hand-two.wrong,
+.main .gallow .man .img-leg-one.wrong,
+.main .gallow .man .img-leg-two.wrong {
+  display: block;
+}
+.main .quiz {
+  position: absolute;
+  left: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+.main .quiz .hidden-word,
+.main .quiz .question,
+.main .quiz .guess {
+  font-size: 50px;
+  font-family: Inter;
+  text-align: center;
+  margin: 0;
+}
+.main .quiz .question,
+.main .quiz .guess {
+  font-size: 30px;
+}
+.main .quiz .question .counter,
+.main .quiz .guess .counter {
+  color: red;
+}
+.main .quiz .keyboard {
+  width: 95%;
+  display: flex;
+  gap: 5px;
+  align-self: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.main .quiz .keyboard .key {
+  display: flex;
+  height: 25%;
+  width: 10%;
+  background-color: #1054ad;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s;
+}
+.main .quiz .keyboard .key:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.main .quiz .keyboard .key .key-p {
+  font-family: Inter;
+  font-weight: 800;
+  font-size: 30px;
+  color: #b0bdcf;
+}
+.main .quiz .keyboard .key.wrong {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.main .quiz .keyboard :nth-child(19) {
+  margin-left: 40px;
+}
+.main .quiz .keyboard :nth-child(26) {
+  margin-right: 40px;
+}
+.main .modal {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  width: 40%;
+  background-color: #c7cdd6;
+  transform: translateX(30vw);
+  transform: translateY(30vh);
+  transform: translate(30vw, 30vh);
+  border-radius: 20px;
+  z-index: 1;
+}
+.main .modal .modal_inner_wrap {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.main .modal .modal_inner_wrap .modal_h3 {
+  text-align: center;
+  font-family: Inter;
+  font-size: 50px;
+  margin: 20px;
+}
+.main .modal .modal_inner_wrap .modal_h2 {
+  text-align: center;
+  font-family: inter;
+  font-size: 40px;
+  margin: 20px;
+}
+.main .modal .modal_inner_wrap .modal_button {
+  justify-self: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 50%;
+  height: 50px;
+  font-size: 30px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.main .modal .modal_inner_wrap .modal_button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.main .modal.open {
+  display: flex;
+}
+.main .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.main .overlay.open {
+  display: block;
+}
+
+@media (max-width: 1246px) {
+  .main .quiz .keyboard :nth-child(19) {
+    margin-left: 0;
+  }
+  .main .quiz .keyboard :nth-child(26) {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 950px) {
+  .main .gallow .img-1 {
+    height: 50vh;
+  }
+  .main .gallow .img-2 {
+    width: 30vw;
+  }
+  .main .gallow .img-3 {
+    width: 15vw;
+  }
+  .main .gallow .img-4 {
+    left: 27vw;
+  }
+  .main .gallow .man {
+    left: 23vw;
+  }
+  .main .gallow .man .img-head {
+    height: 75px;
+  }
+  .main .gallow .man .img-body {
+    height: 80px;
+    top: 75px;
+  }
+  .main .gallow .man .img-hand-one,
+  .main .gallow .man .img-hand-two {
+    height: 50px;
+  }
+  .main .gallow .man .img-hand-one {
+    top: 10px;
+    left: -5px;
+  }
+  .main .gallow .man .img-hand-two {
+    top: -40px;
+    left: 38px;
+  }
+  .main .gallow .man .img-leg-one {
+    height: 50px;
+    top: -20px;
+    left: -2px;
+  }
+  .main .gallow .man .img-leg-two {
+    height: 50px;
+    top: -67px;
+    left: 40px;
+  }
+  .quiz .question,
+  .quiz .guess {
+    font-size: 20px;
+  }
+  .quiz .keyboard {
+    gap: 10px;
+    bottom: 1px;
+  }
+  .quiz .keyboard .key {
+    height: 15%;
+    width: 8%;
+  }
+  .modal .modal_inner_wrap .modal_h3 {
+    font-size: 20px;
+  }
+  .modal .modal_inner_wrap .modal_h2 {
+    font-size: 15px;
+  }
+  .modal .modal_inner_wrap .modal_button {
+    font-size: 10px;
+  }
+}
+@media (max-width: 740px) {
+  .main .quiz .question,
+  .main .quiz .guess {
+    font-size: 15px;
+  }
+  .main .quiz .keyboard {
+    height: 40%;
+  }
+  .main .quiz .keyboard .key {
+    height: 15%;
+  }
+  .main .quiz .keyboard .key .key-p {
+    font-size: 25px;
+  }
+}
+@media (max-width: 571px) {
+  .main .quiz {
+    height: 70%;
+  }
+  .main .quiz .hidden-word {
+    font-size: 30px;
+  }
+  .main .quiz .question,
+  .main .quiz .guess {
+    font-size: 20px;
+  }
+  .main .quiz .keyboard {
+    height: 40%;
+  }
+  .main .quiz .keyboard .key .key-p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 440px) {
+  .main .gallow {
+    transform: translateX(150%);
+  }
+  .main .gallow .img-1 {
+    height: 45vh;
+  }
+  .main .gallow .img-2 {
+    width: 60vw;
+  }
+  .main .gallow .img-4 {
+    top: 55px;
+    left: 55vw;
+  }
+  .main .gallow .man {
+    top: 130px;
+    left: 47vw;
+  }
+  .main .quiz {
+    position: relative;
+    height: 50%;
+    margin: 0 auto;
+    margin-top: auto;
+    transform: translateX(-40%);
+  }
+  .main .quiz .hidden-word {
+    font-size: 30px;
+  }
+  .main .quiz .question,
+  .main .quiz .guess {
+    font-size: 20px;
+  }
+  .main .quiz .keyboard {
+    height: 40%;
+  }
+  .main .quiz .keyboard .key .key-p {
+    font-size: 15px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
